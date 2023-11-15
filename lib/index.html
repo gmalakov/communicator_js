@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>TITLE</title>
+    <meta charset="utf-8">
+</head>
+<body>
+<script language="JavaScript" src="websocket.js"></script>
+<script language="JavaScript">
+    window.addEventListener("load", init, false);
+
+    function init() {
+        connectWs({path: 'site/ws'});// username: 'alabala@dir.bg', password: 'testtest'});
+
+        sendWS('/test/test', {'alabala': 'portokala'}, function (data) {
+            console.log(data);
+
+        });
+        addListener('/set_credentials', function (data) {
+            console.log('set_credentials '+data['username']+'/'+data['message']);
+        });
+    }
+</script>
+</body>
+</html>
