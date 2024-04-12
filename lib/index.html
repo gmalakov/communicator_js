@@ -9,7 +9,7 @@
     window.addEventListener("load", init, false);
 
     function init() {
-        connectWs({path: 'site/ws'});// username: 'alabala@dir.bg', password: 'testtest'});
+        connectWs({path: '/wsio_app'});// username: 'alabala@dir.bg', password: 'testtest'});
 
         sendWS('/test/test', {'alabala': 'portokala'}, function (data) {
             console.log(data);
